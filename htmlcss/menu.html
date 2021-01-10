@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .side-header{
+            float: right;
+        }
+        .nav-header{
+            float:left;
+        }
+        .nav-menu{
+            list-style: none;
+            line-height: 1.4em;
+            background-color: aquamarine;
+        
+            overflow: auto;
+        }
+        .nav-menu li{
+            float: left;
+        }
+        .nav-menu li a{
+            text-decoration: none;
+            padding: 5px;
+        }
+        .side-menu{
+            list-style: none;
+            width: 100px;
+            border: 1px solid green;
+            border-radius: 10%;
+            padding: 20px;
+            line-height: 10px;
+        }
+        .side-menu li {
+            line-height: 1.4em;
+            border-bottom: 1px solid green;
+        }
+        .side-menu li:last-child{
+            border-bottom: none;
+        }
+        .side-menu li a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-header">
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="side-header">
+        <ul class="side-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <br>
+</body>
+</html>
