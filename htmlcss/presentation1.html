@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightblue;
+            color:white;
+            text-align: center;
+        }
+        section{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            max-width: 1200px;
+            margin: auto;
+        }
+        #page1 h1{
+            animation-name: flowDown;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            transform: translateY(-1200px);
+        }
+        @keyframes flowDown {
+            from{
+                transform: translateY(-1200px);
+            }
+            to{
+                transform: translateY(0px);
+            }
+        }
+        #page1 p{
+            animation-name: flowRight;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            transform: translateX(-1200px);
+        }
+        @keyframes flowRight {
+            from{
+                transform: translateX(-1200px);
+            }
+            to{
+                transform: translateX(0px);
+            }
+        }
+        .button{
+        }
+        a{
+            text-decoration: none;
+            background: #333;
+            color: #fff;
+            padding: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+        a:hover{
+            animation-name: hoverAnim;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-direction: normal;
+        }
+        @keyframes hoverAnim{
+            from{
+
+            }
+            to{
+                background: #fff;
+                color:blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section id="page1">
+            <h1>Welcome to my Presentation</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur </p>
+            <div class="button">
+                <a href="#page2">Next</a>
+                
+            </div>
+        </section>
+        <section id="page2">
+            <h1>Page 2</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis incidunt unde ducimus est amet vel? Aspernatur corrupti amet aliquam ullam at dignissimos totam, quisquam voluptatum officiis accusamus, deserunt dolorem consequuntur.</p>
+            <div class="button">
+                <a href="#page1">Prev</a>
+                <a href="#page3">Next</a>
+            </div>
+        </section>
+        <section id="page3">
+            <h1>Page 3</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis incidunt unde ducimus est amet vel? Aspernatur corrupti amet aliquam ullam at dignissimos totam, quisquam voluptatum officiis accusamus, deserunt dolorem consequuntur.</p>
+            <div class="button">
+                <a href="#page2">Prev</a>
+                <a href="#page4">Next</a>
+            </div>
+        </section>
+        <section id="page4">
+            <h1>Page 4</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis incidunt unde ducimus est amet vel? Aspernatur corrupti amet aliquam ullam at dignissimos totam, quisquam voluptatum officiis accusamus, deserunt dolorem consequuntur.</p>
+            <div class="button">
+                <a href="#page3">Prev</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
