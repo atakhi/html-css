@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eloquent JS</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function findSolution(target){
+        function find(n){
+            if(n == target)
+                return n;
+            if(n > target)
+                return null;
+            return find(n+5) || find(n*3);
+        }
+        return find(1);
+    }
+    console.log(findSolution(15) ? "YES" : "NO");
+    function isEven(num){
+        if(num == 0)
+            return "even";
+        if(num == 1)
+            return "odd";
+        return isEven(num < 0 ? 2 - num : num - 2);
+    }
+    console.log(isEven(12));
+    console.log(isEven(15));
+    console.log(isEven(-1));
+    var obj = {};
+    function arrayToList(arr){
+        for(var i = arr.length - 1;i>=0;i--){
+            obj = {value:arr[i],rest:obj};
+        }
+        console.log(obj);
+    }
+    arrayToList([1,2,3]);
+    let arr = [];
+    function listToArray(obj){
+        if(!obj.rest)
+            return;
+        Object.keys(obj).forEach(key=>{
+            if(key == 'value'){
+                arr.push(obj[key]);
+            }
+        });
+        listToArray(obj.rest);
+    }
+    listToArray(obj);
+    console.log(arr);
+
+    function deepComparison(obj1, obj2){
+        if(typeof obj1 == 'object' && typeof obj2 == 'object' && obj1 != null && obj2 != null){
+            let numPropA = 0;
+            let numPropB = 0;
+            for(let key in obj1){
+                numPropA++;
+            }
+            for(let key in obj2){
+                numPropB++;
+            }
+            if(numPropA != numPropB)
+                return false;
+            for(let key in obj1){
+                if(!key in obj2 || !deepComparison(obj1[key],obj2[key])){
+                    return false;
+                }
+            }
+            for(let key in obj2){
+                if(!key in obj1 || !deepComparison(obj1[key],obj2[key])){
+                    return false;
+                }
+            }
+            return true;
+        }else{
+            return obj1 === obj2;
+        }
+    }
+    obj2 = Object.assign({},obj);
+    //obj2.xx= 1;
+    console.log(deepComparison(1,"1"));
+    console.log(deepComparison(obj,obj2));
+    var arr2 = [1,2,3,"a","b","c",[5,6,7],[["inner1", "inner2"]]];
+    function flattenArray(arr){
+        return arr.reduce((arr,curr)=>{
+            return arr.concat(Array.isArray(curr) ? flattenArray(curr) : curr);
+        },[])
+    }
+    console.log(flattenArray(arr2));
+    function myLoop(value,updatefn,bodyfn,testfn){
+        for(let val = value; testfn(value); value = updatefn(value)){
+            bodyfn(value);
+        }
+    }
+    myLoop(3,n=>n-1,n=>console.log(n),n=>n>0);
+
+    function every(arr,predfn){
+        for(let v of arr){
+           if(!predfn(v))
+            return false; 
+        }
+        return true;
+    }
+    function everyWithSome(arr, predfn){
+        if(!arr.every(n=>!predfn))
+            return false;
+        return true;
+    }
+    console.log(everyWithSome(arr2,n=>n>0));
+</script>
+</html>
